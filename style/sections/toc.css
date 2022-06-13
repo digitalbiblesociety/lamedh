@@ -1,0 +1,25 @@
+/* Table of contents */
+.table-of-contents-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    break-after: page;
+}
+
+.table-of-contents {
+    min-width: 4in;
+}
+.table-of-contents.double-column {
+    columns: 2;
+}
+
+.table-of-contents a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.table-of-contents a[href]::after {
+    content: leader(".") target-counter(attr(href), page)
+}
