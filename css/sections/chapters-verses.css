@@ -59,8 +59,7 @@ body[dir="rtl"] .c {float: right}
 /* https://ubsicap.github.io/usfm/chapters_verses/index.html#v */
 .chapter .v { /*noinspection CssInvalidFunction */ string-set: term attr(title)}
 .v1         {display: none!important;}
-*::footnote-call,
-sup {
+sup,.v {
     vertical-align: baseline;
     position: relative;
     top: -0.25rem;

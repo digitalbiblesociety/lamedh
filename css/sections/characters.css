@@ -1,10 +1,10 @@
 /* ================================================================ */
-/* ========================= Special Text ========================= */
 /* ================================================================ */
+/* ========================= Special Text ========================= */
 
 /* Translator’s addition. */
 /* https://ubsicap.github.io/usfm/characters/index.html#add-add */
-.add{
+.add {
     font-style:italic
 }
 
@@ -24,7 +24,7 @@
 /* https://ubsicap.github.io/usfm/characters/index.html#k-k */
 .k {
     font-weight:bold;
-    font-style:italic
+    font-style:italic;
 }
 
 /* Liturgical note/comment */
@@ -50,7 +50,7 @@
 /* Geographic proper name. */
 /* https://ubsicap.github.io/usfm/characters/index.html#png-png */
 .png {
-    border-bottom: 2pt double;
+    border-bottom:2pt double;
 }
 
 /* Support for overlapping */

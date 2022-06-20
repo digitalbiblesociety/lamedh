@@ -9,7 +9,7 @@
   <h3>Lamedh</h3>
 
   <p align="center">
-  A set of css stylesheets for Bible HTML converted from usx or usfm.
+  A set of css and xslt stylesheets for Bible Formats converted from usx or usfm.
     <br />
     <br />
     <a href="https://github.com/digitalbiblesociety/lamedh/issues">Report Bug</a>
@@ -21,7 +21,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A set of multipurpose css stylesheets for styling Bible output from usfm/usx. It makes a general assumption that each element generated from the source bible files will be given a class that matches the style attribute.
+A set of multipurpose css and xslt stylesheets for styling Bible output from usfm/usx. It makes a general assumption that each element generated from the source bible files will be given a class that matches the style attribute.
 
 Our goal is to fully support style outputs for Bibles distributed as:
 * html
@@ -38,7 +38,7 @@ And styling css is often like herding cats.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add Additional Templates with Examples
+- [x] Add Additional Templates with Examples
 - [ ] Extract magic numbers into css Variables
 - [ ] Update to account for latest version of Prince
 
