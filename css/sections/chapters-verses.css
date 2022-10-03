@@ -59,17 +59,17 @@ body[dir="rtl"] .c {float: right}
 /* https://ubsicap.github.io/usfm/chapters_verses/index.html#v */
 .chapter .v { /*noinspection CssInvalidFunction */ string-set: term attr(title)}
 .v1         {display: none!important;}
-sup, .v {
+.chapter .v, sup {
     vertical-align: baseline;
     position: relative;
     top: -0.25rem;
     text-align: center;
     line-height: 0;
-    font-size: .5em;
-    width: .5em;
-    height: .5em;
+    font-size: .5rem;
+    width: .5rem;
+    height: .5rem;
     color: #222;
-    letter-spacing: -.2em;
+    letter-spacing: -.2rem;
     font-weight: bold;
     white-space: nowrap;
     display: inline;
