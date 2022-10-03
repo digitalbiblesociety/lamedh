@@ -1,0 +1,178 @@
+/* ================================================================ */
+/* ========================= Special Text ========================= */
+/* ================================================================ */
+
+/* Translator’s addition. */
+/* https://ubsicap.github.io/usfm/characters/index.html#add-add */
+.add{
+    font-style:italic
+}
+
+/* Quoted book title. */
+/* https://ubsicap.github.io/usfm/characters/index.html#bk-bk */
+.bk {
+    font-style:italic
+}
+
+/* Deuterocanonical/LXX additions */
+/* https://ubsicap.github.io/usfm/characters/index.html#dc-dc */
+.dc {
+
+}
+
+/* Keyword */
+/* https://ubsicap.github.io/usfm/characters/index.html#k-k */
+.k {
+    font-weight:bold;
+    font-style:italic
+}
+
+/* Liturgical note/comment */
+/* https://ubsicap.github.io/usfm/characters/index.html#lit */
+.lit{
+    font-weight:bold;
+    text-align:right;
+}
+
+/* Name of God */
+/* https://ubsicap.github.io/usfm/characters/index.html#nd-nd */
+.nd{
+    font-variant:small-caps
+}
+
+/* Proper name */
+/* https://ubsicap.github.io/usfm/characters/index.html#pn-pn */
+.pn{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+/* Geographic proper name. */
+/* https://ubsicap.github.io/usfm/characters/index.html#png-png */
+.png {
+    border-bottom: 2pt double;
+}
+
+/* Support for overlapping */
+/* https://ubsicap.github.io/usfm/characters/index.html#addpn-addpn */
+.addpn { /* Deprecated */ }
+
+/* Quoted text */
+/* https://ubsicap.github.io/usfm/characters/index.html#qt-qt */
+.qt {
+    font-style:italic;
+    text-indent:0;
+    padding:0;
+    margin:0;
+}
+
+/* Signature of the Author */
+/* https://ubsicap.github.io/usfm/characters/index.html#sig-sig*/
+.sig {
+    font-weight:normal;
+    font-style:italic;
+}
+
+/* Passage of text based on a secondary language */
+/* https://ubsicap.github.io/usfm/characters/index.html#sls-sls */
+.sls {font-style:italic}
+
+/* Transliterated or foreign word(s) */
+/* https://ubsicap.github.io/usfm/characters/index.html#tl-tl */
+.tl {font-style:italic}
+
+/* Words of Jesus */
+/* https://ubsicap.github.io/usfm/characters/index.html#wj-wj */
+.wj {color:#d22}
+
+/* ================================================================ */
+/* ====================== Character Styling ======================= */
+/* ================================================================ */
+
+/* Emphasis text */
+/* https://ubsicap.github.io/usfm/characters/index.html#em-em */
+.em {font-style:italic}
+
+/* Bold text */
+/* https://ubsicap.github.io/usfm/characters/index.html#bd-bd */
+.bd {font-weight:bold}
+
+/* Italic text */
+/* https://ubsicap.github.io/usfm/characters/index.html#it-it */
+.it {font-style:italic}
+
+/* Bold-italic text */
+/* https://ubsicap.github.io/usfm/characters/index.html#bdit-bdit */
+.bdit {font-weight:bold;font-style:italic}
+
+/* Normal text */
+/* https://ubsicap.github.io/usfm/characters/index.html#no-no */
+.no {font-weight:normal;font-style:normal}
+
+/* Small-cap text. */
+/* https://ubsicap.github.io/usfm/characters/index.html#sc-sc */
+.sc{font-variant:small-caps}
+
+/* handled in verses */
+.sup {}
+
+.bk{font-style:italic}
+.dc{font-style:italic}
+
+/* ================================================================ */
+/* ==================== Special Features =========================  */
+/* ================================================================ */
+
+/* For illustrations */
+/* https://ubsicap.github.io/usfm/characters/index.html#fig-fig */
+.fig {
+    display: none;
+    visibility: hidden;
+}
+
+/* Subject index entry. */
+/* https://ubsicap.github.io/usfm/characters/index.html#ndx-ndx */
+.ndx {
+    /* Additional Processing for these required */
+}
+
+/* Ruby glossing | base text with annotations above */
+.rb {/**/}
+/*
+ruby {display:inline-table;text-align:center;white-space:nowrap;text-indent:0;table-baseline:2}
+ruby > rb, rbc, rtc  {display:table-row;}
+ruby > rt, rbc + rtc  {display:table-header-group;}
+rbc > rb, rtc > rt {display:table-cell;padding:1px;}
+rt {font-size:0.5em;line-height:1.2em;}
+rp {display:none;}
+rt[rbspan] {table-column-span:attr(rbspan)}
+*/
+
+/* 	Pronunciation Annotation */
+/* https://ubsicap.github.io/usfm/characters/index.html#pro-pro */
+.pro {
+    /* Deprecated */
+}
+
+/* Wordlist / glossary / dictionary entry. */
+/* https://ubsicap.github.io/usfm/characters/index.html#w-w */
+.w { }
+
+
+
+/* noinspection ALL */
+.w[strong="*"]:after {
+    content: attr(strong);
+    font-style: italic;
+    font-size: x-small;
+    line-height: 0;
+    vertical-align: baseline;
+    position: relative;
+    letter-spacing: -.25pt;
+}
+
+/* Greek word list entry. */
+/* https://ubsicap.github.io/usfm/characters/index.html#wg-wg */
+.wg {
+    font-style: italic;
+}

@@ -1,0 +1,20 @@
+/*
+==============================================
+                  Armenian
+==============================================
+Additive numerals not working in PrinceXML
+so we're using javascript counter instead.
+*/
+
+body[script="Armi"] .chapter {page:scripture-armenian}
+@page scripture-armenian {
+    counter-reset: footnote;
+    @top-left   {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: prince-script(armenian-numerals, counter(page));font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-armenian:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

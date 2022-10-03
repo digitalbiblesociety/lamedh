@@ -1,0 +1,177 @@
+.title-page section {font-family: Helvetica}
+.title-page h1 {font-size: 42px;letter-spacing: 3px;font-weight: lighter;text-align: center}
+.title-page h1 small {font-size: 20px;color: gray;display: block}
+.title-page .copyright {font-size: 12px;color: gray}
+.title-page .description {font-size: 14px;color: gray}
+
+#toc > ol {
+    width:50%;
+    margin:0 auto;
+}
+
+#toc ol {
+    display: block;
+}
+
+#toc ol:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+#toc li .book-title {
+    display: block;
+    font-weight: bold;
+    padding: 10px 0;
+    margin:15px 0 5px 0;
+    border-bottom: thin solid #222;
+}
+
+#toc li {
+    list-style: none;
+    text-align: center;
+    display: block;
+}
+
+#toc ol ol li {
+    float:left;
+    display: block;
+    list-style: none;
+    padding:0 15px;
+}
+
+#toc ol ol a {
+    display: block;
+    height:30px;
+    width:30px;
+    color:#222;
+    text-decoration: none;
+}
+
+h4.c {
+    overflow-wrap: break-word;
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    display: block;
+    float: left;
+    margin: 0 5px;
+}
+h4.c + p {
+    text-indent: 0;
+}
+h4.c + p .v {
+    display: none;
+}
+
+#chapter_content {
+    text-align: justify;
+}
+
+.mt1, .mt2, .mt3, .mt4, .imt1, .imt2, .imt3, .imt4, .ms1, .ms2, .ms3, .ms4, .s1, .s2, .s3, .s4 {text-align: center;font-weight: 700}
+.mt1 {font-size: 3em;margin: 0}
+.mt1 + p {padding-top: 1em}
+.mt2 {font-size: 1.6em;font-style: italic;font-weight: 400}
+.ms2 {font-size: 1.5em}
+.ms3 {font-size: 1.4em}
+.mr {font-size: .9em;margin-bottom: 1em;text-align: center;font-weight: 400;font-style: italic}
+.r, .sr {font-weight: 400;font-style: italic;text-align: center}
+.rq {font-size: .85em;font-style: italic;text-align: right}
+.r a {text-decoration: none;color: #333}
+.r a:hover {text-decoration: underline;color: #0055b3}
+.d, .h {font-style: italic;text-align: center}
+.s,
+.s1 {font-size: 1.4em; text-align: center; font-weight: bold}
+.sp {text-align: left;font-weight: 400;font-style: italic}
+.sd, .sd1 {height: 1rem}
+.sd2 {height: 2rem}
+.sd3 {height: 3rem}
+.sd4 {height: 4rem}
+
+
+.ca {font-style: italic;font-weight: 400;color: #777}
+.cl {text-align: center;font-weight: 700}
+.cd {font-style: italic;margin-left: 1em;margin-right: 1em}
+
+sup {vertical-align: top;top: -.5em}
+
+sup[class^="v"] {
+    white-space: nowrap;
+    vertical-align: super;
+    font-size: .9rem;
+    padding: 0 .15em 0 .2em;
+    font-weight: 400;
+    top: -.2em;
+    color: gray;
+}
+
+sup[class^="v"]:first-child {padding: 0 .25em 0 0}
+.va:before {content: "("}
+.va:after {content: ")" !important}
+.vp {font-weight: 700}
+
+p {font-size: 1.3em}
+.mi, .pmo {margin-left: 1em;margin-right: 0;text-indent: 0}
+.pi, .pmc, .pm {margin-left: 1em;margin-right: 0}
+.cls {text-align: right;margin-top: .5em}
+.m {text-indent: 0 !important}
+.mi {text-indent: 0 !important}
+.pc {text-align: center;text-indent: 0}
+.pmc {margin-top: .5em}
+.pmc, .pm {text-indent: 1.5em}
+.pmo {text-indent: 1em}
+.pmr {text-align: right}
+.po {margin-bottom: 1em}
+.pr {text-align: right}
+.x {font-size: .85rem;box-sizing: border-box;display: inline-block;padding: 0 .4em;margin: 0 .1em;text-indent: 0;text-align: left;}
+
+a[role="doc-noteref"] {font-size: 0.675em;vertical-align: super;vertical-align: 35%;text-decoration: none}
+.fk {font-style: italic;font-variant: small-caps}
+.fv {font-size: .75em;letter-spacing: -.03em;vertical-align: .25em;font-family: sans-serif;font-weight: 700}
+
+[class^="is"] {font-size: 1.1em;text-align: center;font-weight: 700}
+.iex, .ili, .ili1, .ili2, .im, .imi, .io1, .iot, .ip, .ipi, .ipq, .ipr, .iq, .iq2, .iqt {font-size: 1.2em}
+
+[class^="ili"] {padding-left: 1em;text-indent: -1em}
+.ili1, [class^="iq"], .imq {margin-left: 1em;margin-right: 1em}
+
+[class^="p"], .iex, .iq2, [class^="ip"] {text-indent: .8em}
+.io1, .ipi {padding: 0 1em}
+.im {text-indent: 0}
+.imi {text-indent: 0;margin-left: 1em;margin-right: 1em}
+.ipq {font-style: italic;margin-left: 1em;margin-right: 1em}
+.ipr {text-align: right;text-indent: 0}
+.ili2 {margin-left: 2em;margin-right: 1em}
+.iot {font-weight: 700;font-size: 1.1em;margin-top: 1.5em}
+.iqt {text-indent: 1em;font-style: italic}
+.li3, .pi2, .io3 {margin-left: 3em;margin-right: 0}
+.li4, .pi3, .io4 {margin-left: 4em;margin-right: 0}
+
+[class^="q"], [class^="li"] {padding-left: 1em;margin-left: 1em;margin-right: 0}
+.q4 {margin-left: 2.5em;margin-right: 0}
+.qc {text-align: center}
+.qs, .qr {font-style: italic;text-align: right}
+.qa {text-align: center;font-style: italic;font-size: 1.1em;margin-left: 0;margin-right: 0}
+.qac {margin-left: 0;margin-right: 0;padding: 0;text-indent: 0;font-style: italic}
+.qm2, .q2 {margin-left: 1.5em;margin-right: 0}
+.qm3, .q3, .li2, .pi1, .io2 {margin-left: 2em;margin-right: 0}
+.lit {text-align: right;font-weight: 700}
+.pn {font-weight: 700;text-decoration: underline}
+.wj {color: #c00}
+.bd, .fr, .xo {font-weight: 700}
+.it, .em, .tl, .sls, .dc, .add, .bk, .ior, [class^="fq"], .xq, .xk, .va {font-style: italic}
+.bdit, .k, .fl {font-weight: 700;font-style: italic}
+.no {font-weight: 400;font-style: normal}
+.sc, .nd {font-variant: small-caps}
+.qt {text-indent: 0;padding: 0;margin: 0;font-style: italic}
+.sig {font-weight: 400;font-style: italic}
+
+table {width: 100%;display: table}
+.tr {display: table-row}
+
+[class^="th"] {font-style: italic;display: table-cell}
+
+[class^="tc"] {display: table-cell}
+
+[class^="tcr"], [class^="thr"] {text-align: right;padding-right: 1.5em}

@@ -1,0 +1,22 @@
+/*
+==============================================
+                  Bengali
+==============================================
+*/
+@counter-style bengali {
+    system: numeric;
+    symbols: "\9E6" "\9E7" "\9E8" "\9E9" "\9EA" "\9EB" "\9EC" "\9ED" "\9EE" "\9EF";
+    /* ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯ */
+}
+body[script="Beng"] .chapter {page:scripture-bengali}
+@page scripture-bengali {
+    counter-reset: footnote;
+    @top-left   {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: prince-script(bengali-numerals, counter(page));font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-bengali:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

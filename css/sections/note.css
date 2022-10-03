@@ -1,0 +1,103 @@
+@page {
+    @footnote {
+        border-top: solid #222 thin;
+        padding-top: 4pt;
+    }
+}
+
+.f {
+    font-size: 16pt;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 0.4em;
+    margin: 0 0.1em;
+    text-indent: 0;
+    text-align: left;
+    border-radius: 4pt;
+    border: 1pt solid #dcdcdc
+}
+
+.fr {
+    font-weight: bold
+}
+
+.fk {
+    font-style: italic;
+    font-variant: small-caps
+}
+
+[class^="fq"] {
+    font-style: italic
+}
+
+.fl {
+    font-style: italic;
+    font-weight: bold
+}
+
+.fv {
+    color: #515151;
+    font-size: 0.75em;
+    letter-spacing: -0.03em;
+    vertical-align: 0.25em;
+    line-height: 0;
+    font-weight: bold
+}
+
+.fv:after {
+    content: "\a0"
+}
+
+.x {
+    font-size: 16pt;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    padding: 0 0.4em;
+    margin: 0 0.1em;
+    text-indent: 0;
+    text-align: left;
+    border-radius: 4pt;
+    border: 1pt solid #dcdcdc
+}
+
+.xo {
+    font-weight: bold
+}
+
+.xk {
+    font-style: italic
+}
+
+.xq {
+    font-style: italic
+}
+
+.note,
+.note {
+    float: inline-footnote;
+    font-size: 8pt;
+    line-height: 10pt;
+    margin:0;
+    padding:0;
+}
+
+.note {
+    visibility: hidden
+}
+
+.note * {
+    visibility: visible
+}
+
+*::footnote-call {
+    content: counter(footnote, upper-roman);
+    visibility: visible!important;
+}
+
+*::footnote-marker {
+    content: counter(footnote, upper-roman);
+    visibility: visible!important;
+}
+
+/* †, ††, ‡, ‡†, ‡‡, ‡‡†, ‡‡‡, §†, §††, §‡, §‡†   */

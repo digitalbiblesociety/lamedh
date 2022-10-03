@@ -1,0 +1,90 @@
+:root {
+    --intro-p-margin: 10pt;
+    --intro-is-margin: 10pt 0 5pt;
+    --intro-iq-margin: 0 1em .25em 0;
+    --intro-imt-margin: 2em 0;
+}
+
+/* Introduction Wrapper */
+.introduction                {margin-bottom:.25in;padding-bottom:.25in;column-span: all}
+.introduction p              {string-set: term '';margin-bottom:var(--intro-p-margin)}
+
+/* book titles and toc are handled elsewhere */
+[class^="toc"],
+.introduction .h,
+.introduction .mt,
+.introduction .mt2,
+.introduction .mt1           {display:none!important}
+
+/* 
+    Introduction Section Headings
+    https://ubsicap.github.io/usfm/introductions/index.html#is
+*/
+.introduction [class^="is"]  {font-weight:bold;text-align:left;margin:var(--intro-is-margin)}
+
+/*
+    Introduction outline title.
+    https://ubsicap.github.io/usfm/introductions/index.html#iot
+*/
+.introduction .iot           {font-weight:bold}
+
+/*
+    Introduction Major Title
+    https://ubsicap.github.io/usfm/introductions/index.html#imt
+*/
+.introduction [class^="imt"] {text-align:center;font-weight:bold;margin:var(--intro-imt-margin)}
+
+/*
+    Introduction Flush Left Paragraph
+    https://ubsicap.github.io/usfm/introductions/index.html#im
+*/
+.introduction .im            {text-indent:0}
+
+/*
+    Introduction Indented Flush Left Paragraph
+    https://ubsicap.github.io/usfm/introductions/index.html#im
+*/
+.introduction .imi           {text-indent:0;margin-left:1em;margin-right:1em}
+
+/*
+    Introduction Right Aligned Paragraph
+    https://ubsicap.github.io/usfm/introductions/index.html#ipr
+*/
+.introduction .ipr           {text-align:right;text-indent:0}
+html[dir="rtl"] .ipr         {text-align:left}
+.introduction .ipq           {font-style:italic;margin-left:1em;margin-right:1em}
+
+/*
+    Introduction Indented introduction paragraph
+    https://ubsicap.github.io/usfm/introductions/index.html#ipi
+*/
+.introduction .ipi           {padding-left:1em;padding-right:1em}
+
+/*
+    Introduction Introduction poetic line
+    https://ubsicap.github.io/usfm/introductions/index.html#ipi
+*/
+.introduction [class^="iq"]  {font-style:italic;margin:var(--intro-iq-margin)}
+.introduction .iq,
+.introduction .iq1  {margin-left:1em}
+.introduction .iq2  {margin-left:1.5em}
+.introduction .iq3  {margin-left:2em}
+.introduction .iq4  {margin-left:2.5em}
+.introduction .iq5  {margin-left:3em}
+
+/*
+    Introduction blank line.
+    https://ubsicap.github.io/usfm/introductions/index.html#ib
+*/
+.introduction .ib            {padding-bottom:1em}
+
+/*
+    Introduction Outline Entry
+    https://ubsicap.github.io/usfm/introductions/index.html#io
+*/
+.introduction [class^="io"] {font-size:.8em}
+.introduction .io,
+.introduction .io1           {margin-left:15pt}
+.introduction .io2           {margin-left:20pt}
+.introduction .io3           {margin-left:25pt}
+.introduction .ior           {text-align:right;float:right}

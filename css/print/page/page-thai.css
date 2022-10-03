@@ -1,0 +1,23 @@
+/*
+==============================================
+                    Thai
+==============================================
+
+@counter-style thai {
+    system: numeric;
+    symbols: "\E50" "\E51" "\E52" "\E53" "\E54" "\E55" "\E56" "\E57" "\E58" "\E59";
+    ๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙
+
+*/
+body[script="Thai"] .chapter {page:scripture-thai}
+@page scripture-thai {
+    counter-reset: footnote;
+    @top-left   {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page, thai);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-thai:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

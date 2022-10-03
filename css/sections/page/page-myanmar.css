@@ -1,0 +1,18 @@
+@counter-style myanmar {
+    system: numeric;
+    symbols: "\1040" "\1041" "\1042" "\1043" "\1044" "\1045" "\1046" "\1047" "\1048" "\1049";
+    /* ၀ ၁ ၂ ၃ ၄ ၅ ၆ ၇ ၈ ၉ */
+}
+
+body[script="Mymr"] .chapter {page:scripture-myanmar}
+@page scripture-myanmar {
+    counter-reset: footnote;
+    @top-left   {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page, myanmar);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-myanmar:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

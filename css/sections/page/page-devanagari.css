@@ -1,0 +1,18 @@
+@counter-style devanagari {
+    system: numeric;
+    symbols: '\966' '\967' '\968' '\969' '\96A' '\96B' '\96C' '\96D' '\96E' '\96F';
+    /* symbols: '०' '१' '२' '३' '४' '५' '६' '७' '८' '९'; */
+}
+
+body[script="Deva"] .chapter {page:scripture-devanagari}
+@page scripture-devanagari {
+    counter-reset: footnote;
+    @top-left   {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page, devanagari);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-devanagari:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

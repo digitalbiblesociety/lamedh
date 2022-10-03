@@ -1,0 +1,24 @@
+body {
+	font-size:18px;
+}
+
+body .nav {
+	padding: 1em auto;
+	margin: 1em auto;
+	text-align: center;
+	border-bottom: 1px solid #222;
+}
+
+body .nav a {
+	color:#222;
+	text-decoration: none;
+}
+
+body .nav a[href="#"] {
+	text-decoration: underline;
+}
+
+body .lamedh {
+	max-width: 600px;
+	margin:0 auto;
+}

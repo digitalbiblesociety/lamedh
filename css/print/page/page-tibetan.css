@@ -1,0 +1,18 @@
+@counter-style tibetan {
+    system: numeric;
+    symbols: "\F20" "\F21" "\F22" "\F23" "\F24" "\F25" "\F26" "\F27" "\F28" "\F29";
+    /* ༠ ༡ ༢ ༣ ༤ ༥ ༦ ༧ ༨ ༩ */
+}
+
+body[script="Tibt"] .chapter {page:scripture-tibetan}
+@page scripture-tibetan {
+    counter-reset: footnote;
+    @top-left   {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page, tibetan);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-tibetan:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

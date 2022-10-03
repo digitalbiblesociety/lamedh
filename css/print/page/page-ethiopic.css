@@ -1,0 +1,15 @@
+/* ethiopic-numeric */
+
+body[script="Geok"] .chapter,
+body[script="Geor"] .chapter {page:scripture-georgian}
+@page scripture-georgian {
+    counter-reset: footnote;
+    @top-left   {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page, ethiopic-numeric);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-georgian:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

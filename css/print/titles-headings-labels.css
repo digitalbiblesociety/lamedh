@@ -1,0 +1,91 @@
+.book-title                   {font-size:2rem;line-height:75pt;text-align: center}
+
+/* Major Title */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#mt */
+.mt, .mt1, .mt2, .mt3, .mt4   {text-align:center;font-weight:bold;letter-spacing:normal;column-span:all;prince-line-break-choices: title-lookahead;}
+.mt, .mt1                     {font-size:1.5em;line-height:1.5;padding:5pt 0}
+.mt2                          {font-size:1.25em;line-height:1.5;}
+.mt3, .mt4                    {font-size:1em;line-height:1.5;}
+
+/* Minor Title */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#mte */
+.mte, .mte1, .mte2, .mte3,.mte4{text-align:center;font-weight:bold;letter-spacing:normal;column-span:all}
+.mte, .mte1                    {font-size:1.5em;line-height:1.5;padding:5pt 0}
+.mte2                          {font-size:1.25em;line-height:1.5}
+.mte3,.mte4                    {font-size:1em;line-height:1.5}
+
+/* Major Section Heading */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#ms */
+[class^="ms"] {
+    text-align:center;
+    font-weight:bold;
+    font-size:12pt;
+    padding:10pt 0;
+    break-inside: avoid-column;
+    break-after: avoid-column;
+    prince-line-break-choices: title-lookahead;
+    width: 100%;
+}
+[class^="ms"] + .mr {
+    text-align: center;
+    break-inside: avoid-column;
+    break-after: avoid-column;
+}
+/* .ms1, .ms2, .ms3 */
+
+/* Major section reference range */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#mr */
+.mr {font-size:0.9em;margin-bottom:25pt;text-align:center;font-weight:normal;font-style:italic}
+
+/* Section heading */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#s */
+/* The typical (common) section division heading. The variable # represents the level of division. */
+.s, .s1, .s2, .s3, .s4 {
+    text-align: center;
+    font-weight: bold;
+    padding: 8pt 0;
+    break-inside: avoid-column;
+    break-after: avoid-column;
+}
+.s1 + .s2 {margin:0;font-size:small}
+.s + .r, .s1 + .r, .s2 + .r, .s3 + .r, .s4 + .r {
+    margin-top:-8pt;
+    padding-bottom:8pt;
+}
+
+/* Section reference range. */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#sr */
+.sr {text-align:center;font-style:italic;font-size:10pt}
+
+/* Parallel Passage Reference */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#r */
+.r {
+    text-align: center;
+    font-size: .8em;
+    break-after: avoid;
+    page-break-after:avoid;
+    page-break-before:avoid;
+}
+
+.r + p {
+    break-before: avoid;
+}
+
+    /* Inline quotation references */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#rq */
+.rq {display:block;font-size:.8em;font-style:italic;text-align:right;letter-spacing:normal}
+body[dir="rtl"] .rq {text-align:left}
+
+/* Descriptive title (or “Hebrew subtitle”). */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#d */
+.d {font-style:italic;text-align:center;font-size:inherit;letter-spacing:normal;margin:5pt 0}
+
+/* Speaker Identification (e.g. Job and Song of Songs). */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#sp */
+.sp {text-align:left;font-weight:normal;font-style:italic;font-size:inherit;letter-spacing:normal}
+
+/* Semantic division */
+/* https://ubsicap.github.io/usfm/titles_headings/index.html#sd */
+.sd, .sd1, .sd2, .sd3 {
+
+}

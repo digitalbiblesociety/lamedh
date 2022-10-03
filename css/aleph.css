@@ -1,0 +1,98 @@
+main {min-height:100%;max-width:800px;margin:0 auto;font-family:'Noto Sans';
+    text-align:left; padding:40px 40px 28px 60px;background-color:#fff; color:#222;}
+
+main:after {content:"";display:block}
+label {cursor:pointer}
+label:focus {outline:0}
+
+.title-page {text-align:center;padding-top:40px;}
+.title-page li {list-style:none;text-align: center;padding:10px 0;}
+.title-page li a {color:#222;text-decoration:none;}
+
+.footnotes	                {display:block;column-count:3;font-size:.8rem;border-top:thin solid #666;padding-top:3rem;margin-top:3rem;}
+.footnotes li	            {break-inside:avoid;list-style:none;margin-bottom:1rem;}
+.footnotes li a	            {color:#222;text-decoration:none}
+.footnotes li:not(:target)  {opacity:.5}
+.footnotes li:target        {font-size:1.5rem;color:#000}
+
+a.notelink 			{color:#eee; text-decoration:none;}
+a.notelink:hover, .r a:hover 	{text-decoration:underline;}
+
+
+.notelink sup 		{font-size:.7rem;letter-spacing:-.03rem;vertical-align:.25rem;line-height:0;font-family:sans-serif;}
+
+/* CSS for Tooltip Notes */
+.tooltip {position:relative;color:#48b;margin:0;text-decoration:none;left:-.2rem;}
+.tooltip span {visibility:hidden;position:absolute;z-index:1;background-color:#f2f2f2;text-align:center;padding:6px;
+    bottom:100%;left:50%;width:150px;margin-left:-75px;color:#222;font-size:.92rem;border-radius:3px; border:1px #aaa solid;
+    -webkit-box-shadow:4px 2px 6px -4px rgba(0,0,0,0.75);-moz-box-shadow:4px 2px 6px -4px rgba(0,0,0,0.75);box-shadow:4px 2px 6px -4px rgba(0,0,0,0.75);}
+.tooltip:hover span {visibility:visible;}
+
+/* Book Menu */
+.menu                          {position:fixed;top:0;left:0;background:#fff;width: 50vw;transform: translate(-50vw);height:100%;z-index:9}
+.menu .books                   {overflow-y:scroll;height:100%;display:block}
+.menu label                    {cursor:pointer;display:block;text-align:center;height:30px;line-height:30px;color:#222}
+.menu label.menu-toggle        {position: absolute;font-size: 1.5em;line-height: 1em;right: -2em;top: 1em;width: 1em;height: 1em;padding: .2em;z-index: 9;background-color: #fff;color: #444;border: thick solid #f1f1f1;border-radius: 100%}
+.menu div a                    {float:left;line-height:3em;width:25%;text-align:center;color:#222;font-size:1em;border:thin solid #ddd; text-decoration: none;box-sizing: border-box;}
+.menu-checkbox, main book      {display:none}
+.menu-checkbox:checked + .menu {transform:translate(0);-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}
+.menu-checkbox:checked ~ main  {opacity: .5;filter: blur(4px);}
+
+.books label                   {background-color:#f7f7f7}
+.books > label                 {box-sizing:border-box;border-right-width:thick;border-right-style:solid;margin:1px 1px 0 0}
+.menu > .menu                  {border-right-width:thick;border-right-style:solid}
+.books .menu > label:before    {content:"←";position:absolute;left:5px}
+
+.books label        {box-sizing:border-box;border-right-width:thick;border-right-style:solid}
+.gospels			{border-right-color:#49f} div label.gospels:hover		{background-color:#49f}
+.history			{border-right-color:#bbf} div label.history:hover		{background-color:#bbf}
+.law	   			{border-right-color:#bfb} div label.law:hover		   	{background-color:#bfb}
+.letters_general    {border-right-color:#fc0} div label.letters_general:hover 	{background-color:#fc0}
+.letters_paul       {border-right-color:#f70} div label.letters_paul:hover 	{background-color:#f70}
+.major_prophets     {border-right-color:#fbb} div label.major_prophets:hover	{background-color:#fbb}
+.minor_prophets     {border-right-color:#6bb} div label.minor_prophets:hover	{background-color:#6bb}
+.poetry				{border-right-color:#fbf} div label.poetry:hover			{background-color:#fbf}
+.prophecy           {border-right-color:#0ad} div label.prophecy:hover	   		{background-color:#0ad}
+.other_book         {border-right-color:#eab} div label.other_book:hover	   	{background-color:#eab}
+
+@media only screen and (max-width:500px) {
+    .menu label {
+        height:4rem;line-height: 4rem;font-size:1.5rem;
+    }
+    .menu-toggle {
+        background-color: transparent;
+    }
+    .menu                          {width:100vw;transform:translate(-100vw)}
+    .menu-checkbox:checked + .menu label.menu-toggle {position: absolute; top:0;right:0;left:auto;z-index:99;}
+    .menu-checkbox:checked + .menu {transform:translate(0)}
+}
+
+
+#search-results article cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+}
+
+#search-results article cite a {
+    color:#888;
+    text-decoration: none;
+}
+
+
+/*
+@media only screen and (max-width:800px) {
+ main 	{padding:20px 20px 20px 45px; max-width:500px;}
+ p 		{font-size:2rem; line-height:1.25;}
+.mt1	{font-size:2rem;padding:0 1rem;}
+ .c 	{padding:.5rem 0 0 0 ;}
+ .menu label	{font-size:1.7rem; height:2.7rem;}
+}
+
+@media only screen and (max-width:480px) {
+ main 	{padding:20px 20px 20px 60px; max-width:360px;}
+ p 		{font-size:5rem; line-height:1.3;}
+ .c 	{padding:.5rem 0 0 0 ;}
+ .menu label	{font-size:1.9rem; height:3rem;}
+}
+*/

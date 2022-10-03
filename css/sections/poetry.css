@@ -1,0 +1,54 @@
+/* Line breaks */
+lb         { white-space: pre; }
+lb::before { content: "\A"; prince-forced-breaks: full; }
+
+/* Poetic line */
+/* https://ubsicap.github.io/usfm/poetry/index.html#q */
+.q,.q1     {text-indent:5pt;}
+.q2        {text-indent:10pt}
+.q3        {text-indent:15pt}
+.q4        {text-indent:20pt}
+
+/* Right-aligned poetic line. */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qr */
+.qr        {text-align:right;font-style:italic}
+
+/* Centered poetic line */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qc */
+.qc        {text-align:center}
+
+/* Used for the expression “Selah” */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qs */
+.qs        {font-style:italic;text-align:right}
+
+/* Acrostic heading */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qa */
+.qa        {text-align:center;font-style:italic;font-size:1.1em;margin-left:0;margin-right:0}
+
+/* Marker to indicate the acrostic letter within a poetic line */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qac */
+.qac       {margin-left:0;margin-right:0;padding:0;text-indent:0;font-style:italic}
+
+/* Embedded text poetic line */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qm */
+.qm,.qm1   {margin-left:10pt}
+.qm2       {margin-left:15pt}
+.qm3       {margin-left:20pt}
+
+/* Hebrew note */
+/* https://ubsicap.github.io/usfm/poetry/index.html#qd */
+.qd        {margin-top:10pt;font-style: italic}
+
+/* Blank line. */
+/* https://ubsicap.github.io/usfm/poetry/index.html#b */
+.b         {display: block;height: 10pt}
+
+/* Reset Poetry For Mobile Screens */
+@media screen and (max-width: 600px) {
+  .q1,.q2,.q3,.q4 {
+	text-indent: 0;
+  }
+  .qm,.qm1,.qm2,.qm3 {
+	margin-left: 0;
+  }
+}

@@ -1,0 +1,21 @@
+table   {width:100%;display:table}
+
+/* Tables */
+/* https://ubsicap.github.io/usfm/tables/index.html#tr */
+.tr     {display:table-row}
+
+/* Table column heading */
+/* https://ubsicap.github.io/usfm/tables/index.html#th */
+[class^="th"]       {font-style:italic;display:table-cell}
+
+/* Right aligned table column heading. */
+/* https://ubsicap.github.io/usfm/tables/index.html#thr */
+[class^="thr"]      {text-align:right;padding:0 25pt}
+
+/* Table cell */
+/* https://ubsicap.github.io/usfm/tables/index.html#tc */
+[class^="tc"]       {display:table-cell}
+
+/* Right aligned table cell */
+/* https://ubsicap.github.io/usfm/tables/index.html#tcr */
+[class^="tcr"]      {text-align:right;padding:0 25pt}

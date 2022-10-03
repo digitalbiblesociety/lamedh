@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="usx">
+      <attribute name="version">
+        <data type="decimal"/>
+      </attribute>
+      <oneOrMore>
+        <choice>
+          <element name="book">
+            <attribute name="code">
+                <data type="string">
+                    <param name="minLength">3</param>
+                    <param name="pattern">\w+</param>
+                </data>
+            </attribute>
+            <attribute name="style">
+              <data type="NCName"/>
+            </attribute>
+          </element>
+          <element name="chapter">
+            <attribute name="number">
+              <data type="integer"/>
+            </attribute>
+            <attribute name="sid"/>
+            <attribute name="style">
+              <data type="NCName"/>
+            </attribute>
+          </element>
+          <element name="para">
+            <attribute name="style">
+              <data type="NCName"/>
+            </attribute>
+            <oneOrMore>
+              <choice>
+                <text/>
+                <element name="verse">
+                  <optional>
+                    <attribute name="eid"/>
+                  </optional>
+                  <optional>
+                    <attribute name="number">
+                      <data type="integer"/>
+                    </attribute>
+                  </optional>
+                  <optional>
+                    <attribute name="sid"/>
+                  </optional>
+                  <optional>
+                    <attribute name="style">
+                      <data type="NCName"/>
+                    </attribute>
+                  </optional>
+                </element>
+              </choice>
+            </oneOrMore>
+          </element>
+        </choice>
+      </oneOrMore>
+    </element>
+  </start>
+</grammar>

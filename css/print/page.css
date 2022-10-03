@@ -1,0 +1,34 @@
+@page :first {
+    margin-top: 1in;
+    margin-bottom: 1in;
+}
+
+/*
+==============================================
+                Default Latin
+==============================================
+*/
+.chapter {page:scripture;}
+@page scripture {
+    counter-reset: footnote;
+    @top-center {content: counter(page);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-left   {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+
+body[dir='rtl'] .chapter {page:scripture-rtl}
+@page scripture-rtl {
+    counter-reset: footnote;
+    @top-left      {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @bottom-center {content: counter(page);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right     {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+
+@page scripture-rtl:first {
+    @top-left      {content: normal}
+    @bottom-center {content: normal}
+    @top-right     {content: normal}
+}
+
+
+

@@ -1,0 +1,47 @@
+.lamedh * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.lamedh {
+  line-height: 1;
+}
+
+.lamedh nav ul {
+  list-style :none;
+}
+
+.lamedh blockquote, .lamedh q {
+  quotes: none;
+}
+
+.lamedh blockquote:before,
+.lamedh blockquote:after,
+.lamedh q:before,
+.lamedh q:after {
+  content: '';
+  content: none;
+}
+
+.lamedh a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.lamedh table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.lamedh input,
+.lamedh select {
+  vertical-align :middle;
+}

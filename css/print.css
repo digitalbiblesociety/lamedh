@@ -1,0 +1,32 @@
+*               {margin:0;padding:0}
+.scripture-content                 {text-align:left;font-size:10pt;line-height:1.1em;}
+body[dir="rtl"] .scripture-content {text-align:right}
+
+.title-page                   {page-break-after:always;column-span:all;text-align:center;padding: 35% 5% 0 5%;}
+.title-page .title_vernacular,
+.title-page .title            {font-weight:bold;line-height:1.5;margin-bottom:5mm}
+.title-page .title_vernacular {font-size:2rem}
+.title-page .title            {font-size:1.25rem}
+.title-page .copyright        {position:absolute; bottom:50pt;left:50%;width:100pt;margin-left:-50pt;text-align:center;font-size:.75rem}
+
+.blurb-page                   {page-break-after:always;column-span:all;text-align:justify;}
+.blurb-page .publisher-logo   {margin:10pt auto;display:block;width:3in;filter: grayscale(1)}
+.blurb-page .publisher-title  {font-size:14pt; color: #222;display: none;}
+.blurb-page .publisher-text   {font-size:10pt; color: #444;max-width: 50%;display: block; margin: 25pt auto;line-height: 1.5;}
+.blurb-page .publisher-block h4,
+.blurb-page .publisher-block h5 { text-align: center; margin-bottom: 5pt; }
+.blurb-page .description        {margin:15pt 0;}
+.description-aside span em:before  {content:" ["}
+.description-aside span em:after  {content:"]"}
+.blurb-page .dbs-logo {
+    opacity: .6;
+    position: fixed;
+    bottom:0;
+    right:0;
+    width: 1.25in;
+}
+
+/* Verse */
+.book-start {prince-bookmark-level:2;prince-bookmark-label:attr(title)}
+
+.v1, .ide, .rem, .usfm {display:none}

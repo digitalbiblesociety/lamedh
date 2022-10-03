@@ -1,0 +1,44 @@
+/* List header */
+/* https://ubsicap.github.io/usfm/lists/index.html#lh */
+.lh {
+    margin-bottom:1em;
+}
+
+/* List entry */
+/* https://ubsicap.github.io/usfm/lists/index.html#li */
+.li,.li1      {margin:0 10pt;display: flex; justify-content: space-between;}
+.li2          {margin:0 15pt}
+.li3          {margin:0 20pt}
+.li4          {margin:0 25pt}
+
+/* List footer. */
+/* https://ubsicap.github.io/usfm/lists/index.html#lf */
+.lf {
+    margin-top:1em;
+}
+
+/* Embedded list entry */
+/* https://ubsicap.github.io/usfm/lists/index.html#lim */
+.lim,.lim1     {margin:0 10pt}
+.lim2          {margin:0 15pt}
+.lim3          {margin:0 20pt}
+.lim4          {margin:0 25pt}
+
+/* List entry total */
+/* https://ubsicap.github.io/usfm/lists/index.html#litl-litl */
+.litl {
+    display: inline-block;
+    float:right;
+}
+
+/* List entry “key” content */
+/* https://ubsicap.github.io/usfm/lists/index.html#lik-lik */
+.lik {
+    font-style: italic;
+}
+
+/* List entry “value” content */
+/* https://ubsicap.github.io/usfm/lists/index.html#liv-liv */
+.liv {
+    float: right;
+}

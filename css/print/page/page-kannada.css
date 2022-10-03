@@ -1,0 +1,18 @@
+@counter-style kannada {
+    system: numeric;
+    symbols: "\CE6" "\CE7" "\CE8" "\CE9" "\CEA" "\CEB" "\CEC" "\CED" "\CEE" "\CEF";
+    /* ೦ ೧ ೨ ೩ ೪ ೫ ೬ ೭ ೮ ೯ */
+}
+
+body[script="Knda"] .chapter {page:scripture-kannada}
+@page scripture-kannada {
+    counter-reset: footnote;
+    @top-left   {content: string(term, first);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-center {content: counter(page);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+    @top-right  {content: string(term, last);font-size: 8pt;color: #222;margin: .2in 0 .1in}
+}
+@page scripture-kannada:first {
+    @top-left   {content: normal}
+    @top-center {content: normal}
+    @top-right  {content: normal}
+}

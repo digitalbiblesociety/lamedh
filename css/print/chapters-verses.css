@@ -1,0 +1,93 @@
+/* Chapter Wrap */
+.scripture-content {
+    columns:2;
+    column-gap:.75em;
+}
+
+.chapter.c1 {
+    page-break-before: always;
+}
+
+
+/* Chapter number */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#c */
+.c {
+    prince-bookmark-level: 3;
+    prince-bookmark-label: attr(title);
+    content: attr(title);
+    break-after: avoid-column;
+    color: #222;
+    font-size: 1.25rem;
+    letter-spacing: -1pt;
+    line-height: 1.5rem;
+    text-align: center;
+    display: block;
+    float: left;
+    padding: .25rem .5rem;
+}
+
+body[dir="rtl"] .c {float: right}
+
+/* Alternate chapter number */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#ca-ca */
+.ca {
+    font-style: italic;
+    font-weight: normal;
+    color: #777
+}
+.ca:before {content: "("}
+.ca:after  {content: ")" !important}
+
+/* The chapter “label” */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#cl */
+.cl {text-align: center;font-weight: bold;page-break-after: avoid;padding-top: .5rem}
+.cl + .c {display: none}
+
+/* Published chapter character. */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#cp */
+.cp {
+    color: #222;
+    font-size: 1.25rem;
+    letter-spacing: -1pt;
+    line-height: 1.5rem;
+    text-align: center;
+    display: block;
+    float: left;
+    padding: .5rem .75rem;
+}
+.cp + .c {display: none}
+
+/* Chapter description. */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#cd */
+.cd {margin-left: 1em;margin-right: 1em;font-style: italic}
+
+
+/* Verse number */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#v */
+.chapter .v { /*noinspection CssInvalidFunction */ string-set: term attr(title)}
+.v1         {display: none!important;}
+*::footnote-call,
+sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.2rem;
+    height: 5pt;
+    width: 5pt;
+    text-align: center;
+    line-height: 0;
+    font-size: .7em;
+    color: #555;
+    letter-spacing: -.25pt;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline;
+}
+
+/* Alternate verse number. */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#va-va */
+.va:before {content: "("}
+.va:after {content: ")" !important}
+
+/* Published verse character */
+/* https://ubsicap.github.io/usfm/chapters_verses/index.html#vp-vp */
+/* Handled in verse */

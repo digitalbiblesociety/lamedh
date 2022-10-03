@@ -1,0 +1,83 @@
+/* Normal paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#p */
+.p, .pc, .po, .m, .pr, .pmo, .pi1, .pi2, .pi3 {
+    text-indent: 8pt;
+}
+
+/* Continuation (margin) paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#m */
+.m {text-indent:0!important}
+
+/* Opening of an epistle/letter. */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#po */
+.po {
+    margin-bottom:8pt;
+}
+
+/* Right-aligned paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pr */
+.pr                 {text-align: right}
+body[dir="rtl"] .pr {text-align: left}
+
+/* Closure of an epistle/letter */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#cls */
+.cls                 {text-align: right}
+body[dir="rtl"] .cls {text-align: left}
+
+/* Embedded text opening */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pmo */
+.pmo 	{text-indent:1rem}
+
+/* Embedded text paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pm */
+.pm 	{text-indent:1rem}
+
+/* Embedded text closing */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pmc */
+.pmc  {
+    text-indent:1.5rem;
+    margin: 2.5pt 0 5pt 0;
+}
+
+/* Embedded text closing */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pmr */
+.pmr {
+
+}
+
+/* Indented paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pi */
+.pi,.pi2,.pi3 {margin-right:0;}
+.pi1 	{margin-left:1rem}
+.pi2 	{margin-left:3rem}
+.pi3 	{margin-left:4rem}
+
+/* Indented flush left paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#mi */
+.mi {
+    text-indent: 0;
+}
+
+/* Basic.
+Indicates “no-break” with previous paragraph */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#nb */
+.nb {
+
+}
+
+/* Centered paragraph. */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#pc */
+.pc {
+    text-align: center;
+}
+
+/* Indented paragraph with hanging indent. */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#ph */
+.ph,.ph1,.ph2,.ph3,.ph4 {}
+
+/* Blank line. */
+/* https://ubsicap.github.io/usfm/paragraphs/index.html#b */
+.b {
+    height:5pt;
+    display: inline-block;
+}
