@@ -1,18 +1,26 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template name="header_styles">
-    <link href="/Users/jon/Sites/lamedh/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/toc.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/introduction.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/chapters-verses.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/titles-headings-labels.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/paragraphs.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/poetry.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/characters.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/lists.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/note.css" rel="stylesheet" type="text/css" />
-    <link href="/Users/jon/Sites/lamedh/css/print/page.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/toc.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/introduction.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/hyphenations.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/chapters-verses.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/titles-headings-labels.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/paragraphs.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/poetry.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/characters.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/lists.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/note.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/page.css" rel="stylesheet" type="text/css" />
+
+    <link href="../../../../lamedh/css/print/page/page-arabic.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/page/page-armenian.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/page/page-bengali.css" rel="stylesheet" type="text/css" />
+    <link href="../../../../lamedh/css/print/page/page-cjk.css" rel="stylesheet" type="text/css" />
+
+
     <meta name="page_count" content="{$page_count}" />
     <style>
         @page {
@@ -72,6 +80,9 @@
             }
         }
         .scripture-content {
+        <xsl:if test="$metadata/data/pod/justified = 1">
+            text-align: justify!important;
+        </xsl:if>
         <xsl:if test="$metadata/data/pod/line_height">
             line-height: <xsl:value-of select="$metadata/data/pod/line_height" />!important;
         </xsl:if>
@@ -97,6 +108,7 @@
         }
         <xsl:value-of select="$metadata/data/pod/custom_styles" />
     </style>
+    <meta name="font_size" content="{$metadata/data/pod/font_size}" />
     <meta name="font_value" content="{$metadata/data/pod/font}" />
     <xsl:choose>
         <xsl:when test="$metadata/data/pod/font">
@@ -104,11 +116,11 @@
             <style>
                 @font-face {
                     font-family: "<xsl:value-of select="$metadata/data/pod/font" />";
-                    src: url("../../../../assets/fonts/<xsl:value-of select="$metadata/data/pod/font" />") format("<xsl:value-of select="$metadata/data/pod/font_format" />");
+                    src: url("../../../_/assets/fonts/<xsl:value-of select="$metadata/data/pod/font" />") format("<xsl:value-of select="$metadata/data/pod/font_format" />");
                 }
                 @font-face {
                     font-family: "<xsl:value-of select="$metadata/data/pod/font_bold" />";
-                    src: url("../../../../assets/fonts/<xsl:value-of select="$metadata/data/pod/font_bold" />") format("<xsl:value-of select="$metadata/data/pod/font_format" />");
+                    src: url("../../../_/assets/fonts/<xsl:value-of select="$metadata/data/pod/font_bold" />") format("<xsl:value-of select="$metadata/data/pod/font_format" />");
                     font-weight: bold;
                 }
 

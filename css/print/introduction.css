@@ -78,7 +78,7 @@ html[dir="rtl"] .ipr         {text-align:left}
     https://ubsicap.github.io/usfm/introductions/index.html#io
 */
 .introduction .io,
-.introduction .io1           {margin-left:15pt;font-size:.8em}
-.introduction .io2           {margin-left:20pt;font-size:.8em}
-.introduction .io3           {margin-left:25pt;font-size:.8em}
+.introduction .io1           {margin-left:15pt}
+.introduction .io2           {margin-left:20pt}
+.introduction .io3           {margin-left:25pt}
 .introduction .ior           {text-align:right;float:right}

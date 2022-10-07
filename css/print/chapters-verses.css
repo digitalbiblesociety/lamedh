@@ -66,8 +66,11 @@ body[dir="rtl"] .c {float: right}
 /* https://ubsicap.github.io/usfm/chapters_verses/index.html#v */
 .chapter .v { /*noinspection CssInvalidFunction */ string-set: term attr(title)}
 .v1         {display: none!important;}
-*::footnote-call,
-sup {
+
+p:has(.v1,.v2,.v3)     {break-after: avoid-column}
+p:has(.v1,.v2,.v3,.v6) {break-after: auto;}
+
+.chapter .v, sup, *::footnote-call {
     vertical-align: baseline;
     position: relative;
     top: -0.2rem;
@@ -75,7 +78,7 @@ sup {
     width: 5pt;
     text-align: center;
     line-height: 0;
-    font-size: .7em;
+    font-size: .75rem;
     color: #555;
     letter-spacing: -.25pt;
     font-weight: bold;

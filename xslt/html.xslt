@@ -12,7 +12,7 @@
 
     <!-- Analytics Options -->
     <!-- Generate HTML for Analytics, disabled by default -->
-    <xsl:param name="include_analytics" as="xs:string" required="true" />
+    <xsl:param name="include_analytics" as="xs:integer" required="true" />
     <xsl:param name="hashes" as="xs:string" />
     <xsl:param name="log_url" as="xs:string" />
     <xsl:param name="utm_source" as="xs:string" />
@@ -59,6 +59,8 @@
                         <link rel="stylesheet" type="text/css" href="../_/print.css" media="print" />
                         <link rel="stylesheet" type="text/css" href="../_/aleph.css" media="screen" />
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+                        
                         <title><xsl:value-of select="$header_title"/></title>
                         <xsl:if test="$metadata/data/pod[1]">
                             <xsl:variable name="font" select="replace($metadata/data/pod[1]/font,'.ttf','')"/>
@@ -88,7 +90,7 @@
                                 <xsl:apply-templates select="/*/*[count(preceding-sibling::book)=$book_count]"/>
                             </main>
 
-                            <xsl:if test="$include_analytics">
+                            <xsl:if test="$include_analytics = 1">
                             <xsl:for-each select="$tokenized_hashes">
                                 <xsl:variable name="token" select="." />
                                 <xsl:if test="contains($token, $current_book_id)">

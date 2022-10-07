@@ -6,8 +6,7 @@
             <!-- If only one exists don't generate the Table of Contents -->
             <xsl:variable name="book_numbers" select="count(/usx/book)"/>
             <xsl:choose>
-                <xsl:when test="$book_numbers > 1">
-                        
+                <xsl:when test="$book_numbers > 1 and $scope = 'bible'">
                         <div>
                             <xsl:attribute name="class">
                                 table-of-contents <xsl:if test="$book_numbers > 30">double-column</xsl:if>

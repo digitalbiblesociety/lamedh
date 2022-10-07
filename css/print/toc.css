@@ -8,7 +8,7 @@
 }
 
 .table-of-contents {
-    min-width: 4in;
+    min-width: 5in;
 }
 .table-of-contents.double-column {
     columns: 2;
@@ -16,6 +16,7 @@
 
 .table-of-contents a {
     display: block;
+    margin: 5pt 0;
     color: black;
     text-decoration: none;
 }
@@ -23,3 +24,4 @@
 .table-of-contents a[href]::after {
     content: leader(".") target-counter(attr(href), page)
 }
+

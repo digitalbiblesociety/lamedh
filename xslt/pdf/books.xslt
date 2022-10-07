@@ -10,6 +10,9 @@
                         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                     </head>
                     <body class="scripture-styles">
+                        <xsl:attribute name="lang">
+                            <xsl:value-of select="$metadata/data/iso" />-<xsl:value-of select="$metadata/data/alphabet/script" />
+                        </xsl:attribute>
                         <xsl:variable name="book_id" select="preceding::book[1]/@code"/>
                         <main class="m{$book_id}">
                             <xsl:variable name="book_count" select="position()"/>

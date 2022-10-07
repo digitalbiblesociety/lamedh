@@ -4,7 +4,8 @@
 
     <xsl:param name="api_url" as="xs:string" required="yes" />
     <xsl:param name="bible_id" as="xs:string" required="yes" />
-    <xsl:param name="metadata" select="document(concat($api_url,$bible_id,'?format=xml'))"/>
+    <xsl:param name="trim" as="xs:string" required="yes" />
+    <xsl:param name="metadata" select="document(concat($api_url,$bible_id,'?format=xml&amp;trim='$trim))"/>
 
     <xsl:include href="pdf/books.xslt" />
 

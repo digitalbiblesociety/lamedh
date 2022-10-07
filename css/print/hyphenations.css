@@ -1,0 +1,225 @@
+:lang(afr) {
+	-prince-hyphenate-patterns: url("../../hyph/afr.pat.txt");
+}
+:lang(asm) {
+	-prince-hyphenate-patterns: url("../../hyph/asm.pat.txt");
+}
+:lang(bel) {
+	-prince-hyphenate-patterns: url("../../hyph/bel.pat.txt");
+}
+:lang(ben) {
+	-prince-hyphenate-patterns: url("../../hyph/ben.pat.txt");
+}
+:lang(bul) {
+	-prince-hyphenate-patterns: url("../../hyph/bul.pat.txt");
+}
+:lang(cat) {
+	-prince-hyphenate-patterns: url("../../hyph/cat.pat.txt");
+}
+:lang(ces) {
+	-prince-hyphenate-patterns: url("../../hyph/ces.pat.txt");
+}
+:lang(chu) {
+	-prince-hyphenate-patterns: url("../../hyph/chu.pat.txt");
+}
+:lang(cop) {
+	-prince-hyphenate-patterns: url("../../hyph/cop.pat.txt");
+}
+:lang(cym) {
+	-prince-hyphenate-patterns: url("../../hyph/cym.pat.txt");
+}
+:lang(dan) {
+	-prince-hyphenate-patterns: url("../../hyph/dan.pat.txt");
+}
+:lang(epo) {
+	-prince-hyphenate-patterns: url("../../hyph/epo.pat.txt");
+}
+:lang(est) {
+	-prince-hyphenate-patterns: url("../../hyph/est.pat.txt");
+}
+:lang(eus) {
+	-prince-hyphenate-patterns: url("../../hyph/eus.pat.txt");
+}
+:lang(fin) {
+	-prince-hyphenate-patterns: url("../../hyph/fin.pat.txt");
+}
+:lang(fra) {
+	-prince-hyphenate-patterns: url("../../hyph/fra.pat.txt");
+}
+:lang(fur) {
+	-prince-hyphenate-patterns: url("../../hyph/fur.pat.txt");
+}
+:lang(gle) {
+	-prince-hyphenate-patterns: url("../../hyph/gle.pat.txt");
+}
+:lang(glg) {
+	-prince-hyphenate-patterns: url("../../hyph/glg.pat.txt");
+}
+:lang(grc) {
+	-prince-hyphenate-patterns: url("../../hyph/grc.pat.txt");
+}
+:lang(guj) {
+	-prince-hyphenate-patterns: url("../../hyph/guj.pat.txt");
+}
+:lang(hbs-cyrl) {
+	-prince-hyphenate-patterns: url("../../hyph/hbs-cyrl.pat.txt");
+}
+:lang(hbs-latn) {
+	-prince-hyphenate-patterns: url("../../hyph/hbs-latn.pat.txt");
+}
+:lang(hin) {
+	-prince-hyphenate-patterns: url("../../hyph/hin.pat.txt");
+}
+:lang(hrv) {
+	-prince-hyphenate-patterns: url("../../hyph/hrv.pat.txt");
+}
+:lang(hsb) {
+	-prince-hyphenate-patterns: url("../../hyph/hsb.pat.txt");
+}
+:lang(hun) {
+	-prince-hyphenate-patterns: url("../../hyph/hun.pat.txt");
+}
+:lang(hye) {
+	-prince-hyphenate-patterns: url("../../hyph/hye.pat.txt");
+}
+:lang(ina) {
+	-prince-hyphenate-patterns: url("../../hyph/ina.pat.txt");
+}
+:lang(ind) {
+	-prince-hyphenate-patterns: url("../../hyph/ind.pat.txt");
+}
+:lang(isl) {
+	-prince-hyphenate-patterns: url("../../hyph/isl.pat.txt");
+}
+:lang(ita) {
+	-prince-hyphenate-patterns: url("../../hyph/ita.pat.txt");
+}
+:lang(kan) {
+	-prince-hyphenate-patterns: url("../../hyph/kan.pat.txt");
+}
+:lang(kat) {
+	-prince-hyphenate-patterns: url("../../hyph/kat.pat.txt");
+}
+:lang(kmr) {
+	-prince-hyphenate-patterns: url("../../hyph/kmr.pat.txt");
+}
+:lang(lav) {
+	-prince-hyphenate-patterns: url("../../hyph/lav.pat.txt");
+}
+:lang(lit) {
+	-prince-hyphenate-patterns: url("../../hyph/lit.pat.txt");
+}
+:lang(mal) {
+	-prince-hyphenate-patterns: url("../../hyph/mal.pat.txt");
+}
+:lang(mar) {
+	-prince-hyphenate-patterns: url("../../hyph/mar.pat.txt");
+}
+:lang(mkd) {
+	-prince-hyphenate-patterns: url("../../hyph/mkd.pat.txt");
+}
+:lang(mon) {
+	-prince-hyphenate-patterns: url("../../hyph/mon-cyrl.pat.txt");
+}
+:lang(mul) {
+	-prince-hyphenate-patterns: url("../../hyph/mul-ethi.pat.txt");
+}
+:lang(nld) {
+	-prince-hyphenate-patterns: url("../../hyph/nld.pat.txt");
+}
+:lang(nno) {
+	-prince-hyphenate-patterns: url("../../hyph/nno.pat.txt");
+}
+:lang(nob) {
+	-prince-hyphenate-patterns: url("../../hyph/nob.pat.txt");
+}
+:lang(oci) {
+	-prince-hyphenate-patterns: url("../../hyph/oci.pat.txt");
+}
+:lang(ori) {
+	-prince-hyphenate-patterns: url("../../hyph/ori.pat.txt");
+}
+:lang(pan) {
+	-prince-hyphenate-patterns: url("../../hyph/pan.pat.txt");
+}
+:lang(pli) {
+	-prince-hyphenate-patterns: url("../../hyph/pli.pat.txt");
+}
+:lang(pms) {
+	-prince-hyphenate-patterns: url("../../hyph/pms.pat.txt");
+}
+:lang(pol) {
+	-prince-hyphenate-patterns: url("../../hyph/pol.pat.txt");
+}
+:lang(por) {
+	-prince-hyphenate-patterns: url("../../hyph/por.pat.txt");
+}
+:lang(roh) {
+	-prince-hyphenate-patterns: url("../../hyph/roh.pat.txt");
+}
+:lang(ron) {
+	-prince-hyphenate-patterns: url("../../hyph/ron.pat.txt");
+}
+:lang(rus) {
+	-prince-hyphenate-patterns: url("../../hyph/rus.pat.txt");
+}
+:lang(san) {
+	-prince-hyphenate-patterns: url("../../hyph/san.pat.txt");
+}
+:lang(slk) {
+	-prince-hyphenate-patterns: url("../../hyph/slk.pat.txt");
+}
+:lang(slv) {
+	-prince-hyphenate-patterns: url("../../hyph/slv.pat.txt");
+}
+:lang(spa) {
+	-prince-hyphenate-patterns: url("../../hyph/spa.pat.txt");
+}
+:lang(sqi) {
+	-prince-hyphenate-patterns: url("../../hyph/sqi.pat.txt");
+}
+:lang(srp) {
+	-prince-hyphenate-patterns: url("../../hyph/srp-cyrl.pat.txt");
+}
+:lang(swe) {
+	-prince-hyphenate-patterns: url("../../hyph/swe.pat.txt");
+}
+:lang(tam) {
+	-prince-hyphenate-patterns: url("../../hyph/tam.pat.txt");
+}
+:lang(tel) {
+	-prince-hyphenate-patterns: url("../../hyph/tel.pat.txt");
+}
+:lang(tha) {
+	-prince-hyphenate-patterns: url("../../hyph/tha.pat.txt");
+}
+:lang(tuk) {
+	-prince-hyphenate-patterns: url("../../hyph/tuk.pat.txt");
+}
+:lang(tur) {
+	-prince-hyphenate-patterns: url("../../hyph/tur.pat.txt");
+}
+:lang(ukr) {
+	-prince-hyphenate-patterns: url("../../hyph/ukr.pat.txt");
+}
+:lang(zha) {
+	-prince-hyphenate-patterns: url("../../hyph/zha-latn-pinyin.pat.txt");
+}
+
+:lang(afr),:lang(asm),:lang(bel),:lang(ben),:lang(bul),:lang(cat),:lang(ces),
+:lang(chu),:lang(cop),:lang(cym),:lang(dan),:lang(epo),:lang(est),:lang(eus),
+:lang(fin),:lang(fra),:lang(fur),:lang(gle),:lang(glg),:lang(grc),:lang(guj),
+:lang(hbs-cyrl), :lang(hbs-latn),:lang(hin),:lang(hrv),:lang(hsb),:lang(hun),
+:lang(hye),:lang(ina),:lang(ind),:lang(isl),:lang(ita),:lang(kan),:lang(kat),
+:lang(kmr),:lang(lav),:lang(lit),:lang(mal),:lang(mar),:lang(mkd),:lang(mon),
+:lang(mul),:lang(nld),:lang(nno),:lang(nob),:lang(oci),:lang(ori),:lang(pan),
+:lang(pli),:lang(pms),:lang(pol),:lang(por),:lang(roh),:lang(ron),:lang(rus),
+:lang(san),:lang(slk),:lang(slv),:lang(spa),:lang(sqi),:lang(srp),:lang(swe),
+:lang(tam),:lang(tel),:lang(tha),:lang(tuk),:lang(tur),:lang(ukr),:lang(zha) {
+	hyphens: auto;
+}
+
+* {
+	hyphens: auto;
+	-prince-hyphenate-limit-lines: 2;
+}

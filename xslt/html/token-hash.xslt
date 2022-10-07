@@ -3,9 +3,9 @@
     <!--
         Generates a identifiable token for anonymous web tracking beacons
             - utm_content:
-            - utm_source: Source of the traffic
-            - utm_campaign:
-            - utm_medium:
+            - utm_source: Source of the traffic ENGKJV/GEN
+            - utm_campaign: Mexican-bible-sites
+            - utm_medium: HTML, Epub, PDF, app
     -->
 
     <xsl:param name="log_url" as="xs:string" required="yes" />
@@ -23,7 +23,8 @@
             <xsl:variable name="token" select="." />
             <xsl:if test="contains($token, $book_id)">
                 <img>
-                    <xsl:attribute name="src"><xsl:value-of select="$log_url" />?utm_content=<xsl:value-of select="substring($token,4)" />&amp;utm_source=<xsl:value-of select="$utm_source" />&amp;utm_campaign=<xsl:value-of select="$utm_campaign" />&amp;utm_medium=<xsl:value-of select="$utm_medium" /></xsl:attribute>
+                    <xsl:attribute name="src">
+                    <xsl:value-of select="$log_url" />?utm_content=<xsl:value-of select="substring($token,4)" />&amp;utm_source=<xsl:value-of select="$utm_source" />&amp;utm_campaign=<xsl:value-of select="$utm_campaign" />&amp;utm_medium=<xsl:value-of select="$utm_medium" /></xsl:attribute>
                     <xsl:attribute name="onerror">this.style.display='none'</xsl:attribute>
                 </img>
             </xsl:if>

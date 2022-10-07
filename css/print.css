@@ -16,6 +16,7 @@ body[dir="rtl"] .scripture-content {text-align:right}
 .blurb-page .publisher-block h4,
 .blurb-page .publisher-block h5 { text-align: center; margin-bottom: 5pt; }
 .blurb-page .description        {margin:15pt 0;}
+.blurb-page aside {position:absolute;bottom:.2in;left:0in;font-size:5pt;color:#999;font-style: italic;}
 .description-aside span em:before  {content:" ["}
 .description-aside span em:after  {content:"]"}
 .blurb-page .dbs-logo {
