@@ -1,7 +1,7 @@
-main {min-height:100%;max-width:800px;margin:0 auto;font-family:'Noto Sans';
+.chapter {min-height:100%;max-width:800px;margin:0 auto;font-family:'Noto Sans';
     text-align:left; padding:40px 40px 28px 60px;background-color:#fff; color:#222;}
 
-main:after {content:"";display:block}
+.chapter:after {content:"";display:block}
 label {cursor:pointer}
 label:focus {outline:0}
 

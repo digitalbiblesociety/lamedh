@@ -2,7 +2,7 @@
     <xsl:output indent="yes" use-character-maps="html-illegal-chars" />
     <xsl:strip-space elements="*"/>
 
-    <xsl:param name="metadata" select="document(concat('http://aleph.test/api/bibles/',$bible_id,'?format=xml'))"/>
+    <xsl:param name="metadata" select="document(concat('https://aleph.digitalbiblesociety.net/api/bibles/',$bible_id,'?format=xml'))"/>
     <xsl:param name="bible_id" as="xs:string" required="yes" />
     <xsl:param name="fcbh_audio_nt" as="xs:string" />
     <xsl:param name="fcbh_audio_ot" as="xs:string" />
@@ -16,19 +16,19 @@
     <xsl:variable name="book_ids" select="document('./helpers/book_codes.xslt')/*/xsl:variable[@name='books']" />
 
     <xsl:template match="/usx">{
-        "id": "<xsl:value-of select="$metadata/data/id" />",
+        "id": "<xsl:value-of select="$metadata/data/abbr" />",
         "type": "bible",
-        "name": "<xsl:value-of select="$metadata/data/title_vernacular" />",
+        "name": "<xsl:choose><xsl:when test="$metadata/data/title_vernacular != ''"><xsl:value-of select="$metadata/data/title_vernacular" /></xsl:when><xsl:otherwise><xsl:value-of select="$metadata/data/title" /></xsl:otherwise></xsl:choose>",
         "nameEnglish": "<xsl:value-of select="$metadata/data/title" />",
-        "hasLemma": false,
-        "abbr": "<xsl:value-of select="$metadata/data/id" />",
-        "dir": "ltr",
+        "hasLemma": <xsl:value-of select="$metadata/data/has_lemma" />,
+        "abbr": "<xsl:value-of select="$metadata/data/abbr" />",
+        "dir": "<xsl:value-of select="$metadata/data/dir" />",
         "lang": "<xsl:value-of select="$metadata/data/iso" />",
-        "langName": "<xsl:value-of select="$metadata/data/language/autonym" />",
-        "langNameEnglish": "<xsl:value-of select="$metadata/data/language/name" />",
-        "fontClass": "<xsl:value-of select="$metadata/data/alphabet/script" />",
-        "script": "<xsl:value-of select="$metadata/data/alphabet/script" />",
-        "audioDirectory": "<xsl:value-of select="$metadata/data/id" />",
+        "langName": "<xsl:value-of select="$metadata/data/autonym" />",
+        "langNameEnglish": "<xsl:value-of select="$metadata/data/language" />",
+        "fontClass": "<xsl:value-of select="$metadata/data/script" />",
+        "script": "<xsl:value-of select="$metadata/data/script" />",
+        "audioDirectory": "<xsl:value-of select="$metadata/data/abbr" />",
         "fcbh_drama_nt": "<xsl:value-of select="$fcbh_drama_nt" />",
         "fcbh_drama_ot": "<xsl:value-of select="$fcbh_drama_ot" />",
         "fcbh_audio_nt": "<xsl:value-of select="$fcbh_audio_nt" />",
@@ -43,7 +43,4 @@
         "divisions":[<xsl:for-each select="book"><xsl:variable name="current_usfm_id" select="@code" />"<xsl:value-of select="$book_ids/code[@usfm = $current_usfm_id]/@usfx" />",</xsl:for-each>],
         "sections":[<xsl:for-each select="book"><xsl:variable name="current_usfm_id" select="@code" /><xsl:variable name="current_book" select="position()" /><xsl:for-each select="/*/chapter[count(preceding-sibling::book)=$current_book]">"<xsl:value-of select="concat($book_ids/code[@usfm = $current_usfm_id]/@usfx,@number)" />",</xsl:for-each></xsl:for-each>]
 }</xsl:template>
-
-
-
 </xsl:stylesheet>

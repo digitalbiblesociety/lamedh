@@ -41,10 +41,14 @@ VALUES
 <xsl:variable name="end" select="following::verse[1]"/>
 <xsl:variable name="number_start" select="replace(@number, '([0-9]+).*?[\-,][0-9]+\w?', '$1')" />
 <xsl:variable name="number_end" select="replace(@number, '[0-9]+.*?[\-,]([0-9]+)\w?', '$1')" />
+<xsl:variable name="verse_text" select="following::text()[$end and generate-id(following::verse[1]) = generate-id($end)]" />
+
+
 <xsl:if test="$number_start != ''">
-('<xsl:value-of select="preceding::book[1]/@code" />', '<xsl:value-of select="$header_title" />', '<xsl:value-of select="preceding::chapter[1]/@number" />', '<xsl:value-of select="$number_start" />', '<xsl:value-of select="$number_end" />','<xsl:value-of select="following::text()[$end and generate-id(following::verse[1]) = generate-id($end)]" />'),
+('<xsl:value-of select="preceding::book[1]/@code" />', '<xsl:value-of select="$header_title" />', '<xsl:value-of select="preceding::chapter[1]/@number" />', '<xsl:value-of select="$number_start" />', '<xsl:value-of select="$number_end" />','<xsl:value-of select="$verse_text" />'),
 </xsl:if>
 </xsl:template>
 
 <xsl:template match="text()" />
+
 </xsl:stylesheet>

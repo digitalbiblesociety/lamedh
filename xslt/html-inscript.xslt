@@ -2,14 +2,18 @@
     <xsl:output indent="yes" use-character-maps="html-illegal-chars" />
     <xsl:strip-space elements="*"/>
 
-    <xsl:param name="metadata" select="document(concat('http://aleph.test/api/bibles/',$bible_id,'?format=xml'))"/>
+    <xsl:param name="metadata" select="document(concat('https://aleph.digitalbiblesociety.net/api/bibles/',$bible_id,'?format=xml'))"/>
     <xsl:param name="bible_id" as="xs:string" required="yes" />
+
+    <xsl:param name="requires_font" as="xs:string" />
+    <xsl:param name="hashes" as="xs:string" />
+    <xsl:param name="log_url" as="xs:string" />
+    <xsl:param name="utm_source" as="xs:string" />
+    <xsl:param name="utm_campaign" as="xs:string" />
 
     <xsl:include href="./helpers/numerals.xslt" />
     <xsl:include href="html/character-map.xslt" />
     <xsl:include href="./helpers/book_codes.xslt" />
-
-
 
     <xsl:template match="/usx">
         <xsl:variable name="book_ids" select="document('./helpers/book_codes.xslt')/*/xsl:variable[@name='books']" />
@@ -54,15 +58,19 @@
                 <html>
                 <head>
                     <meta charset="utf-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link href="_/book.css" rel="stylesheet" />
                     <link href="_/font.css" rel="stylesheet" />
-                    <link href="_/mobile.css" rel="stylesheet" />
-                    <title><xsl:value-of select="$metadata/data/title" /> <xsl:value-of select="$book_ids/code[@usfm = preceding::book[2]/@code]/@usfx" /></title>
+                    <title><xsl:value-of select="concat($metadata/data/title, ' | ', preceding::para[@style='h'][1], ' ', @number)" /></title>
                 </head>
-                <body dir="ltr" class="section-document">
+                <body dir="{$metadata/data/dir}">
             <xsl:choose>
                 <xsl:when test="@number">
-                    <div class="section chapter {$book_id} {$book_id}{@number}" dir="ltr" lang="en" data-id="{$book_id}{@number}">
+                    <div class="section chapter {$book_id} {$book_id}{@number}" data-id="{$book_id}{@number}">
+
+                            <xsl:attribute name="lang">
+                                <xsl:if test="$metadata/data/language/iso2"><xsl:value-of select="$metadata/data/language/iso2"/>-</xsl:if><xsl:value-of select="$metadata/data/iso"/>-<xsl:value-of select="$metadata/data/script"/><xsl:if test="$metadata/data/country_id">-<xsl:value-of select="$metadata/data/country_id" /></xsl:if>
+                            </xsl:attribute>
 
                             <xsl:attribute name="data-previd">
                                 <xsl:value-of select="$book_id_prev"/>
@@ -91,7 +99,7 @@
                                                         <xsl:variable name="ref" select="concat($book_id, $chapter_number,'_',$verse_number[1])" />
                                                         <xsl:variable name="end" select="following::verse[1]"/>
 
-                                                        <span class="v-num v-{$verse_number[1]}"><xsl:value-of select="@number" /></span>
+                                                        <sup class="v-num v-{$verse_number[1]}"><xsl:value-of select="@number" /></sup>
 
                                                         <span class="v {$ref}" data-id="{$ref}">
                                                             <xsl:for-each select="following-sibling::node()[$end and generate-id(following::verse[1]) = generate-id($end)]">
@@ -126,8 +134,30 @@
     <xsl:template match="chapter" />
     <xsl:template match="verse" />
 
-    <xsl:template match="note" priority="2">
+    <xsl:template match="para" priority="1">
+        <p>
+            <xsl:attribute name="class"><xsl:value-of select="@style" /></xsl:attribute>
+            <xsl:apply-templates select="node()"/>
+        </p>
+    </xsl:template>
 
+    <xsl:template match="char">
+        <xsl:choose>
+            <xsl:when test="@style = 'w'">
+                <l style="s">
+                    <xsl:attribute name="s">
+                        <xsl:value-of select="@strong" />
+                    </xsl:attribute>
+                    <xsl:apply-templates select="node()" />
+                </l>
+            </xsl:when>
+            <xsl:otherwise>
+                <em class="{@style}"><xsl:apply-templates select="string(.)" /></em>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="note" priority="2">
         <xsl:variable name="footnote_number">
             <xsl:number level="any" count="note"/>
         </xsl:variable>
@@ -135,33 +165,17 @@
             <a href="#note-t{$footnote_number}" class="key">†</a>
             <span class="text"><xsl:value-of select="node()" /></span>
         </span>
-
     </xsl:template>
 
-    <xsl:template match="char" priority="1">
-        <xsl:choose>
-            <xsl:when test="@style = 'w'">
-                <span style="w">
-                    <xsl:attribute name="strong">
-                        <xsl:value-of select="@strong" />
-                    </xsl:attribute>
-                    <xsl:apply-templates select="node()" />
-                </span>
-            </xsl:when>
-            <xsl:when test="@style='xo'"></xsl:when>
-            <xsl:when test="@style='xt'"></xsl:when>
-            <xsl:otherwise>
-                <em class="{@style}"><xsl:value-of select="node()" /></em>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
+    <!-- Tags to ignore -->
+    <xsl:template name="ignored_tags" priority="10" match="para[@style='rem']|para[@style='ide']|verse[@eid]|optbreak|figure|para[@style='toc1']|para[@style='toc2']|para[@style='toc3']|para[@style='h']|book"/>
 
-    <xsl:template priority="10" match="para[@style='rem']|para[@style='ide']|verse[@eid]|optbreak|figure|para[@style='toc1']|para[@style='toc2']|para[@style='toc3']|para[@style='h']|book"/>
-
+    <!-- Fallback for general tags -->
     <xsl:template name="general_fallback" match="@*|node()">
         <xsl:copy>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
+
 
 </xsl:stylesheet>

@@ -24,6 +24,8 @@
     <xsl:include href="html/title-page.xslt" />
     <xsl:include href="html/search.xslt" />
 
+    <xsl:variable name="colorArray" select="('rgba(203, 213, 225, .5)','rgba(209, 213, 219, .5)','rgba(212, 212, 216, .5)','rgba(212, 212, 212, .5)','rgba(214, 211, 209, .5)','rgba(252, 165, 165, .5)','rgba(253, 186, 116, .5)','rgba(252, 211, 77, .5)','rgba(253, 224, 71, .5)','rgba(190, 242, 100, .5)','rgba(134, 239, 172, .5)','rgba(110, 231, 183, .5)','rgba(94, 234, 212, .5)','rgba(103, 232, 249, .5)','rgba(125, 211, 252, .5)','rgba(147, 197, 253, .5)','rgba(165, 180, 252, .5)','rgba(196, 181, 253, .5)','rgba(216, 180, 254, .5)','rgba(240, 171, 252, .5)','rgba(249, 168, 212, .5)','rgba(253, 164, 175, .5)')"> 
+
     <xsl:variable name="tokenized_hashes" select="tokenize($hashes, ':::')" />
     <xsl:param name="metadata" select="document(concat($api_url,$bible_id,'?format=xml'))"/>
 
@@ -176,7 +178,10 @@
         <xsl:variable name="footnote_number">
             <xsl:number level="any" count="note"/>
         </xsl:variable>
-        <span id="ft{$footnote_number}" class="tooltip">+
+        <span id="ft{$footnote_number}" class="tooltip" data-modVal="{$footnote_number mod 22) + 1}">
+            <xsl:attribute name="style">
+                background-color: <xsl:value-of select="colorArray[($footnote_number mod 22) + 1]" />
+            </xsl:attribute>
             <span><xsl:apply-templates /></span>
         </span>
     </xsl:template>
