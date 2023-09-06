@@ -10,7 +10,7 @@
     <xsl:template match="/usx" name="chapter">
         <xsl:for-each select="chapter">
             <xsl:variable name="book_id" select="preceding::book[1]/@code"/>
-            <xsl:result-document method="xhtml" href="content/chapters/{$book_id}{@number}.xhtml">
+            <xsl:result-document method="html" href="content/chapters/{$book_id}{@number}.html">
 
                 <xsl:variable name="header_title">
                     <xsl:choose>

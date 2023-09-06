@@ -11,7 +11,7 @@
                 <link rel="stylesheet" type="text/css" href="_/print.css" media="print" />
                 <link rel="stylesheet" type="text/css" href="_/aleph.css" media="screen" />
                 <xsl:if test="$metadata/data/pod[1]">
-                    <xsl:variable name="font" select="replace($metadata/data/pod[1]/font,'.ttf','')"/>
+                    <xsl:variable name="font" select="replace($metadata/data/pod[1]/font[1],'.ttf','')"/>
                     <style>
                         @font-face {
                             font-family: "<xsl:value-of select="$font" />";

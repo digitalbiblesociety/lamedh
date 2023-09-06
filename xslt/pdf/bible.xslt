@@ -29,10 +29,10 @@
                     </xsl:attribute>
                 </meta>
             </head>
-            <body class="scripture-styles lamedh" dir="{$metadata/data/alphabet/direction}" lang="{$metadata/data/iso}" script="{$metadata/data/script}">
+            <body class="scripture-styles lamedh" dir="{$metadata/data/dir}" lang="{$metadata/data/iso}" script="{$metadata/data/script}">
                 <div class="title-page">
-                    <h1 class="title_vernacular"><xsl:value-of select="$metadata/data/title_vernacular" /></h1>
-                    <h2 class="title"><xsl:value-of select="$metadata/data/title" /></h2>
+                    <h1 class="title_vernacular"><xsl:value-of select="$metadata/data/title_vernacular" disable-output-escaping="yes" /></h1>
+                    <h2 class="title"><xsl:value-of select="$metadata/data/title" disable-output-escaping="yes" /></h2>
                     <time class="date"> <xsl:value-of select="$metadata/data/date" /> </time>
                     <p class="copyright"> <xsl:copy-of select="$metadata/data/copyright" /> </p>
                 </div>
@@ -50,10 +50,8 @@
                         <div class="publisher-text">
                             <xsl:copy-of select="$metadata/data/pod/publisher_text" />
                         </div>
-
                         <h4><xsl:value-of select="$metadata/data/title_vernacular" /></h4>
                         <h5><xsl:value-of select="$metadata/data/title" /></h5>
-
                     </xsl:if>
 
                     <div class="description">

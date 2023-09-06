@@ -2,7 +2,7 @@
 
     <xsl:strip-space elements="*"/>
 
-    <xsl:param name="metadata" select="document(concat('https://aleph.digitalbiblesociety.net/api/bibles/',$bible_id,'?format=xml'))"/>
+    <xsl:param name="metadata" select="document(concat('https://aleph.dbs.org/api/bibles/',$bible_id,'?format=xml'))"/>
     <xsl:param name="bible_id" as="xs:string" required="yes" />
 
 

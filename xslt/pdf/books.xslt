@@ -4,7 +4,7 @@
 
     <xsl:template match="/usx" name="books">
         <xsl:for-each select="book">
-            <xsl:result-document method="xhtml" href="{@code}.xhtml">
+            <xsl:result-document method="html" href="{@code}.html">
                 <html xmlns="http://www.w3.org/1999/xhtml">
                     <head>
                         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>

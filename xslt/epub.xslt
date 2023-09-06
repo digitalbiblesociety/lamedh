@@ -17,7 +17,7 @@
     <xsl:variable name="book_list" select="document('helpers/book_list.xslt')/*/xsl:variable[@name='book_list']/code[$portion=(@section, @section_group, @testament, @canon)]" />
 
     <xsl:include href="html/character-map.xslt" />
-    <xsl:include href="html/elements.xslt" />
+    <!--<xsl:include href="html/elements.xslt" />-->
     <xsl:include href="helpers/ignored_tags.xslt" />
 
     <xsl:template match="/usx">
