@@ -2,11 +2,11 @@
 
     <xsl:template name="bible_opf">
     <xsl:result-document method="xml" href="content/bible.opf">
-        <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid" xml:lang="en-US" prefix="cc:http://creativecommons.org/ns#">
+        <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid" xml:lang="en-US" prefix="cc: http://creativecommons.org/ns#">
             <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
                 <dc:identifier id="uid">bibles.dbs.org.aleph.<xsl:value-of select="$bible_id"/></dc:identifier>
                 <dc:language><xsl:value-of select="concat($metadata/data/iso, '-', $metadata/data/country_id)" /></dc:language>
-                <dc:date><xsl:value-of select="$metadata/data/date"/></dc:date>
+                <dc:date><xsl:value-of select="$metadata/data/year"/></dc:date>
 
                 <dc:title id="vtitle"><xsl:value-of select="$metadata/data/title_vernacular" /></dc:title>
                 <meta refines="#vtitle" property="title-type">main</meta>
@@ -14,7 +14,9 @@
                 <meta refines="#etitle" property="title-type">subtitle</meta>
                 <dc:creator>Digital Bible Society</dc:creator>
 
-                <meta property="dcterms:modified"><xsl:value-of select="concat(current-date(), ':00')" /></meta>
+                <meta property="dcterms:modified">
+                    <xsl:value-of select="format-dateTime(current-dateTime(), '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01]Z')" />
+                </meta>
                 <meta content="{$bible_id}-frontcover.png" name="cover" />
                 <!-- rights expressions for the work as a whole -->
                 <dc:rights>This work is shared with the public using the Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license.</dc:rights>

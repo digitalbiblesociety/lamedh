@@ -5,6 +5,7 @@
 <xsl:template name="chapter">
     <xsl:param name="chapter_num" />
     <xsl:variable name="book_id" select="preceding::book[1]/@code" />
+    
 
     <xsl:result-document method="xhtml" href="content/chapters/{$book_id}{$chapter_num}.xhtml">
         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
@@ -96,7 +97,7 @@
         <xsl:variable name="chapter_number" select="preceding::chapter[1]/@number"/>
         <xsl:variable name="verse_number" select="@number"/>
 
-        <sup id="c{$chapter_number}v{$verse_number}" class="v"><xsl:value-of select="@number"/></sup>
+        <sup id="c{$chapter_number}v{$verse_number}" class="v" xmlns="http://www.w3.org/1999/xhtml"><xsl:value-of select="@number"/></sup>
     </xsl:template>
 
     <xsl:template match="para">
