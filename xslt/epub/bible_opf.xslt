@@ -8,10 +8,19 @@
                 <dc:language><xsl:value-of select="concat($metadata/data/iso, '-', $metadata/data/country_id)" /></dc:language>
                 <dc:date><xsl:value-of select="$metadata/data/year"/></dc:date>
 
-                <dc:title id="vtitle"><xsl:value-of select="$metadata/data/title_vernacular" /></dc:title>
-                <meta refines="#vtitle" property="title-type">main</meta>
-                <dc:title id="etitle"><xsl:value-of select="$metadata/data/title" /></dc:title>
-                <meta refines="#etitle" property="title-type">subtitle</meta>
+                <xsl:choose>
+                    <xsl:when test="$metadata/data/title_vernacular != ''">
+                        <dc:title id="vtitle"><xsl:value-of select="$metadata/data/title_vernacular" /></dc:title>
+                        <meta refines="#vtitle" property="title-type">main</meta>
+                        <dc:title id="etitle"><xsl:value-of select="$metadata/data/title" /></dc:title>
+                        <meta refines="#etitle" property="title-type">subtitle</meta>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <dc:title id="title"><xsl:value-of select="$metadata/data/title" /></dc:title>
+                        <meta refines="#title" property="title-type">main</meta>
+                    </xsl:otherwise>
+                </xsl:choose>
+
                 <dc:creator>Digital Bible Society</dc:creator>
 
                 <meta property="dcterms:modified">
@@ -29,7 +38,7 @@
                 <!-- <meta name="cover" content="cover"/> -->
             </metadata>
             <manifest>
-                <item id="frontcover" href="{$bible_id}-frontcover.png" media-type="image/png" properties="cover-image"/>
+                <!-- <item id="frontcover" href="{$bible_id}-frontcover.png" media-type="image/png" properties="cover-image"/> -->
                 <item id="title_page" href="title_page.xhtml" media-type="application/xhtml+xml"/>
                 <item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />
                 <item id="ncx" href="nav.ncx" media-type="application/x-dtbncx+xml" />

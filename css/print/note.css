@@ -17,9 +17,7 @@
     border: 1pt solid #dcdcdc
 }
 
-.fr {
-    font-weight: bold
-}
+.fr {}
 
 .fk {
     font-style: italic;
@@ -31,18 +29,14 @@
 }
 
 .fl {
-    font-style: italic;
-    font-weight: bold
-}
+    font-style: italic;}
 
 .fv {
     color: #515151;
     font-size: 0.75em;
     letter-spacing: -0.03em;
     vertical-align: 0.25em;
-    line-height: 0;
-    font-weight: bold
-}
+    line-height: 0;}
 
 .fv:after {
     content: "\a0"
@@ -61,9 +55,7 @@
     border: 1pt solid #dcdcdc
 }
 
-.xo {
-    font-weight: bold
-}
+.xo {}
 
 .xk {
     font-style: italic
@@ -91,13 +83,14 @@
 }
 
 *::footnote-call {
-    content: counter(footnote, upper-roman);
+    content: counter(footnote, asterisks);
     visibility: visible!important;
 }
 
 *::footnote-marker {
-    content: counter(footnote, upper-roman);
+    content: counter(footnote, asterisks);
     visibility: visible!important;
 }
 
 /* †, ††, ‡, ‡†, ‡‡, ‡‡†, ‡‡‡, §†, §††, §‡, §‡†   */
+

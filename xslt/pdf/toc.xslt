@@ -20,10 +20,10 @@
                                     <xsl:variable name="header_title">
                                         <xsl:choose>
                                             <xsl:when test="following::para[@style='h'][1]">
-                                                <xsl:value-of select="following::para[@style='h'][1]"/>
+                                                <xsl:value-of select="following::para[@style='h'][1]" />
                                             </xsl:when>
                                             <xsl:when test="following::para[@style='mt'][1]">
-                                                <xsl:value-of select="following::para[@style='mt'][1]"/>
+                                                <xsl:value-of select="following::para[@style='mt'][1]" />
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="@code"/>
@@ -74,7 +74,7 @@
                                         </xsl:choose>
                                     </xsl:variable>
                                     <xsl:variable name="book_id" select="@code"/>
-                                    <a class="{$book_category}" href="#{$book_id}"><xsl:value-of select="$header_title"/></a>
+                                    <a class="{$book_category}" href="#{$book_id}"><xsl:value-of select="$header_title" disable-output-escaping="yes" /></a>
                                 </xsl:if>
                             </xsl:for-each>
                         </div>

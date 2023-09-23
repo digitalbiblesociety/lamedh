@@ -1,0 +1,27 @@
+/*
+==============================================
+                  Coptic
+==============================================
+
+@counter-style bengali-numerals {
+    system: numeric;
+    symbols: "\9E6" "\9E7" "\9E8" "\9E9" "\9EA" "\9EB" "\9EC" "\9ED" "\9EE" "\9EF";
+    /* ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯ */
+
+
+    body[script="Copt"] .chapter {page:scripture-copt}
+    @page scripture-bengali {
+        counter-reset: footnote;
+        @top-left   {content: string(term, first);font-size:10pt;color: #222;margin: .2in 0 .1in}
+        @top-center {content: prince-script(bengcounter, counter(page));font-size:10pt;color: #222;margin: .2in 0 .1in}
+        @top-right  {content: string(term, last);font-size:10pt;color: #222;margin: .2in 0 .1in}
+    }
+    @page scripture-bengali:first {
+        @top-left   {content: normal}
+        @top-center {content: normal}
+        @top-right  {content: normal}
+    }
+    
+    body[script="Copt"] .table-of-contents a[href]::after {
+        content: leader(".") prince-script(bengcounter, target-counter(attr(href), page));
+    }

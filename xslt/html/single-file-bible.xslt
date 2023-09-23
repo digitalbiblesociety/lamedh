@@ -32,19 +32,15 @@
                         <xsl:if test="@number = 1">
                             <xsl:variable name="bookNum" select="count(preceding-sibling::book)"/>
                             <div class="introduction">
-                                <h1 class="book-title" id="{$current_book}">
-                                    <xsl:value-of select="preceding::para[@style='h'][1]"/>
-                                </h1>
+                                <h1 class="book-title" id="{$current_book}"><xsl:value-of select="preceding::para[@style='h'][1]" disable-output-escaping="yes" /></h1>
                                 <xsl:for-each select="preceding-sibling::*[count(preceding-sibling::book) = $bookNum]">
-                                    <p class="{@style}">
-                                        <xsl:value-of select="text()"/>
-                                    </p>
+                                    <p class="{@style}"><xsl:value-of select="text()"/></p>
                                 </xsl:for-each>
                             </div>
                         </xsl:if>
 
                         <xsl:apply-templates
-                            select="$parent/node()[descendant-or-self::node() intersect current-group()]"/>
+                            select="$parent/node()[descendant-or-self::node() intersect current-group()]" />
                         <xsl:apply-templates select="para"/>
 
                     </div>

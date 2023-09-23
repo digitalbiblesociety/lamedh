@@ -78,9 +78,9 @@ p:has(.v1,.v2,.v3,.v6) {break-after: auto;}
     width: 5pt;
     text-align: center;
     line-height: 0;
-    font-size: .75rem;
-    color: #555;
-    letter-spacing: -.25pt;
+    font-size: 7pt;
+    color: #444;
+    letter-spacing: -.65pt;
     font-weight: bold;
     white-space: nowrap;
     display: inline;

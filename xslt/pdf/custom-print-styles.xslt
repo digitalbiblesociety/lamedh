@@ -123,7 +123,6 @@
                     src: url("../../../_/assets/fonts/<xsl:value-of select="$metadata/data/pod/font_bold" />") format("<xsl:value-of select="$metadata/data/pod/font_format" />");
                     font-weight: bold;
                 }
-
                 * {
                     font-family: '<xsl:value-of select="$metadata/data/pod/font" />', serif;
                 }
