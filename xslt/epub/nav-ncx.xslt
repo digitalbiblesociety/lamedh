@@ -29,14 +29,14 @@
                 </xsl:variable>
                 <xsl:variable name="book_id" select="@code"/>
 
-                <navPoint id="bk_{$book_id}" playOrder="{$playOrder + count(preceding::chapter)}">
+                <navPoint id="bk_{$book_id}" playOrder="{$playOrder + count(preceding::chapter[not(@eid)])}">
                 <navLabel>
                     <text><xsl:value-of select="concat($header_title,' ')"/></text>
                 </navLabel>
                 <content src="chapters/{$book_id}.xhtml" />
 
-                    <xsl:for-each select="/*/chapter[count(preceding-sibling::book)=$playOrder]">
-                        <xsl:variable name="playOrderSubNav" select="count(preceding::chapter) + 1" />
+                    <xsl:for-each select="/*/chapter[not(@eid) and count(preceding-sibling::book)=$playOrder]">
+                        <xsl:variable name="playOrderSubNav" select="count(preceding::chapter[not(@eid)]) + 1" />
 
                         <xsl:if test="@number">
                             <navPoint id="bk_{$book_id}{@number}" playOrder="{$playOrderSubNav + $playOrder}">

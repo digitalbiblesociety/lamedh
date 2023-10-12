@@ -4,23 +4,6 @@
 
 <xsl:template name="nav-xhtml">
 
-    <xsl:variable name="header_title">
-        <xsl:choose>
-            <xsl:when test="following::para[@style='h'][1]">
-                <xsl:value-of select="following::para[@style='h'][1]"/>
-            </xsl:when>
-            <xsl:when test="following::para[@style='mt'][1]">
-                <xsl:value-of select="following::para[@style='mt'][1]"/>
-            </xsl:when>
-            <xsl:when test="following::para[@style='toc1'][1]">
-                <xsl:value-of select="following::para[@style='toc1'][1]"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="@code"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable>
-
 <xsl:result-document method="xhtml" href="content/nav.xhtml">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
         <head>
@@ -40,7 +23,22 @@
                             </xsl:call-template>
                         </xsl:variable>
 
-                        <li><a href="chapters/{$book_id}1.xhtml" class="book-title"><xsl:value-of select="following::para[@style='toc1'][1]"/></a>
+                        <li><a href="chapters/{$book_id}1.xhtml" class="book-title">
+                                <xsl:choose>
+            <xsl:when test="following::para[@style='h'][1]">
+                <xsl:value-of select="following::para[@style='h'][1]"/>
+            </xsl:when>
+            <xsl:when test="following::para[@style='mt'][1]">
+                <xsl:value-of select="following::para[@style='mt'][1]"/>
+            </xsl:when>
+            <xsl:when test="following::para[@style='toc1'][1]">
+                <xsl:value-of select="following::para[@style='toc1'][1]"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="@code"/>
+            </xsl:otherwise>
+        </xsl:choose>
+                        </a>
                             <ol class="chapters">
                             <xsl:for-each select="/*/chapter[count(preceding-sibling::book)=$book_count]">
                                 <xsl:if test="@number">
